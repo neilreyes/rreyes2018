@@ -21,9 +21,8 @@ function roboto_load_framework(){
 
 	// Load structures
 	// require_once( ROBOTO_STRUCTURES_DIR . 'footer.php');
-	// require_once( ROBOTO_STRUCTURES_DIR . 'header.php');
-
 	require_once( ROBOTO_STRUCTURES_DIR . 'front-page.php');
+	require_once( ROBOTO_STRUCTURES_DIR . 'header.php');
 	require_once( ROBOTO_STRUCTURES_DIR . 'layout.php');
 	require_once( ROBOTO_STRUCTURES_DIR . 'loops.php');
 	require_once( ROBOTO_STRUCTURES_DIR . 'post.php');
@@ -98,11 +97,9 @@ function roboto_styles_and_scripts(){
 	$parent_style = 'parent-style';
 	$roboto_base_style = 'roboto-base-style';
 	$roboto_main_style = 'roboto-main-style';
-	$roboto_fonts = 'roboto-gfonts';
+	$roboto_font_stack = 'roboto-gfonts';
 
-	wp_enqueue_style( $roboto_fonts, 'https://fonts.googleapis.com/css?family=Montserrat:700|Rubik:300,400,500' );	
-	wp_enqueue_style( 'roboto-bootstrap', 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-	wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css');
+	wp_enqueue_style( $roboto_font_stack, 'https://fonts.googleapis.com/css?family=Montserrat:700|Rubik:300,400,500' );	
 	wp_enqueue_style( $roboto_style, get_stylesheet_directory_uri() . '/style.css');
 	wp_enqueue_style( $roboto_main_style, get_stylesheet_directory_uri() . '/lib/assets/dist/css/main.css');
 
@@ -112,11 +109,11 @@ function roboto_styles_and_scripts(){
 
 	wp_enqueue_script( $slide_out, 'https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js', array('jquery'), false, true );
 
-	wp_enqueue_script( $navigation_script, get_stylesheet_directory_uri() . '/lib/assets/src/js/navigation.js', array('jquery'), false, true );
+	//wp_enqueue_script( $navigation_script, get_stylesheet_directory_uri() . '/lib/assets/src/js/navigation.js', array('jquery'), false, true );
 
-	wp_enqueue_script( $roboto_features_script, get_stylesheet_directory_uri() . '/lib/assets/src/js/roboto-features.js', array('jquery'), false, true );
+	//wp_enqueue_script( $roboto_features_script, get_stylesheet_directory_uri() . '/lib/assets/src/js/roboto-features.js', array('jquery'), false, true );
 
-	wp_enqueue_script( 'tabs', get_stylesheet_directory_uri() . '/lib/assets/src/js/tabs.js', array('jquery'), false, true );
+	//wp_enqueue_script( 'tabs', get_stylesheet_directory_uri() . '/lib/assets/src/js/tabs.js', array('jquery'), false, true );
 }
 
 add_action('wp_enqueue_scripts','roboto_styles_and_scripts');

@@ -1,0 +1,78 @@
+.btn{
+	font-family: 'Montserrat', sans-serif;
+	border-radius: 0px;
+	padding: 15px 22px;
+	border: 0px none !important;
+	text-transform: uppercase;
+	border-radius: 40px;
+	transition: all 0.3s ease-in-out;
+}
+
+.btn-primary{
+	background: #D8262C;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus{
+	transform: translate(-3px,-3px);
+	box-shadow: 13px 12px 17px rgba(2, 2, 2, 0.2);
+	background: #D8262C;
+}
+
+span.wpcf7-not-valid-tip{
+	color: #fff;
+}
+
+a {
+	color: $primary-color;
+}
+
+a:hover,
+a:focus,
+a:active {
+	color: $primary-color;
+	text-decoration: none;
+}
+
+a:focus {
+	outline: 0;
+}
+
+a:hover,
+a:active {
+	outline: 0;
+}
+
+#mobile-btn{
+	display: block;
+	border: 0px;
+	background: #1b2037;
+	cursor: pointer;
+	text-indent: -8888px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	padding: 21px 10px;
+	z-index: 8888;
+
+	@include mask(url(../../src/images/svgs/menu.svg) center center / 25px 28px no-repeat);
+
+	@media screen and (min-width: 768px){
+		display: none;
+	}
+	
+	&:hover,
+	&:active,
+	&:focus{
+		background: #1b2037;
+	}
+}
+
+.active-menu{
+	#mobile-menu-wrapper{
+		@include transform(translateX(0));
+	}
+}
