@@ -79,11 +79,11 @@ function roboto_front_featured_project_loop() {
 
 				printf( '<div %s>', genesis_attr( 'class', array('class'=>'entry-content project-content') ) );
 
-					do_action( 'genesis_entry_header' );
+					//do_action( 'roboto_featured_project_entry_header' );
 
-					do_action( 'genesis_entry_content' );
+					do_action( 'roboto_featured_project_entry_content' );
 
-					do_action( 'genesis_entry_footer' );
+					//do_action( 'roboto_featured_project_entry_footer' );
 				
 				echo '</div>';
 
