@@ -1,0 +1,115 @@
+
+@mixin transition($transition-val){
+	-webkit-transition: $transition-val;
+	-o-transition: $transition-val;
+	transition: $transition-val;
+}
+
+@mixin animate($animate-val){
+	-webkit-animation: $animate-val;
+	-moz-animation: $animate-val;
+	-o-animation: $animate-val;
+	animation: $animate-val
+}
+
+@mixin mask($mask-value){
+	-webkit-mask: $mask-value;
+	mask: $mask-value;
+}
+
+@mixin flexbox(){
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+@mixin flex($flex-val){
+	-webkit-box-flex: $flex-val;
+	-webkit-flex: $flex-val;
+	-ms-flex: $flex-val;
+	flex: $flex-val;
+}
+
+@mixin justify-content($justify-content-val){
+	-webkit-justify-content: $justify-content-val;
+	justify-content: $justify-content-val;
+}
+
+@mixin display($display-value){
+	display: $display-value;
+}
+
+@mixin flex-wrap($flex-wrap-val){
+	-webkit-flex-wrap: $flex-wrap-val;
+	-moz-flex-wrap: $flex-wrap-val;
+	-ms-flex-wrap: $flex-wrap-val;
+	-o-flex-wrap: $flex-wrap-val;
+	flex-wrap: $flex-wrap-val;
+}
+
+@mixin align-items($align-items-val){
+	-webkit-box-align: $align-items-val;
+	-webkit-align-items: $align-items-val;
+	-ms-flex-align: $align-items-val;
+	align-items: $align-items-val;
+}
+
+@mixin box-shadow($box-shadow-val){
+	-webkit-box-shadow: $box-shadow-val;
+	-moz-box-shadow: $box-shadow-val;
+	-o-box-shadow: $box-shadow-val;
+	box-shadow: $box-shadow-val;
+}
+
+@mixin transform($transform-val){
+	-webkit-transform: $transform-val;
+	-ms-transform: $transform-val;
+	-o-transform: $transform-val;
+	transform: $transform-val;
+}
+
+@mixin box-sizing($box-sizing-val){
+	-webkit-box-sizing: $box-sizing-val;
+	-moz-box-sizing: $box-sizing-val;
+	box-sizing: $box-sizing-val;
+}
+
+@mixin order($order-val){
+	-webkit-order: $order-val;
+	-moz-order: $order-val;
+	-ms-order: $order-val;
+	-o-order: $order-val;
+	order: $order-val;
+}
+
+@mixin column-count($column-count-val){
+	-webkit-column-count: $column-count-val; /* Chrome, Safari, Opera */
+	-moz-column-count: $column-count-val; /* Firefox */
+	column-count: $column-count-val;
+}
+
+@mixin xs{
+	@media screen and (max-width: #{$tablet-l}){
+		@content;
+	}
+}
+
+@mixin sm{
+	@media screen and (min-width: #{$tablet-l}){
+		@content;
+	}
+}
+
+@mixin md{
+	@media screen and (min-width: #{$tablet-p}){
+		@content;
+	}
+}
+
+@mixin lg{
+	@media screen and (min-width: #{$desktop}){
+		@content;
+	}
+}

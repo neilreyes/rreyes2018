@@ -1,0 +1,156 @@
+.home{
+	#masthead{
+		opacity: 0;
+		transform: translateY(-62px);
+		@include transition(all 0.3s ease-in-out);
+		width: 100%;
+		position: fixed;
+		background: rgba(255,255,255,1);
+		z-index: 8888;
+	}
+
+	&.is-active{
+		#masthead{
+			opacity: 1;
+			transform: translateY(0px);
+
+			&:hover,
+			&:focus,
+			&:active{
+				background: rgba(255,255,255,1);
+			}
+		}
+	}
+
+	#hero{
+		padding-top: 30px;
+
+		@media screen and (min-width: 768px){
+			height: initial;
+			padding-top: 100px;
+		}
+	}
+}
+
+.hero-branding{
+	transform: scale(0.7);
+
+	@media screen and (min-width: 768px){
+		transform: scale(1);
+	}
+}
+
+.site-header-container{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	align-content: stretch;
+	position: relative;
+	@include flexbox();
+	@extend .container;
+}
+
+/* Top */
+#logo-svg{
+	width: 80px;
+	height: 81px;
+}
+
+.logo-path{
+	fill:#EC202B;
+	transform: scale(0.1);
+}
+
+#logo{
+	background-image:url(../../src/images/svgs/type-r.svg);
+	background-repeat: no-repeat;
+	background-scroll: scroll;
+	background-size: 32px 30px;
+	font-family: "Montserrat", Arial;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1b2037;
+    height: 32px;
+}
+
+#logo:hover,
+#logo:active,
+#logo:focus{
+	text-decoration: none;
+}
+
+.logo{
+	font-family: 'Montserrat', Arial, sans-serif;
+	color: #191e35;
+	display: block;
+
+	&-name{
+		letter-spacing: 6px;
+		font-size: 22px;
+		font-weight: bold;
+		text-transform: uppercase;
+	}	
+
+	&-caption{
+		font-size: 14px;
+		letter-spacing: 4px;
+		position: relative;
+		display: inline-block;
+		font-weight: bold;
+		text-transform: uppercase;
+
+		&:before{
+			content: '';
+			position: absolute;
+			left: -10px;
+			top: 8px;
+			width: 3px;
+			height: 3px;
+			border-radius: 3px 3px 3px 3px;
+			background: $primary-color;	
+		}
+
+		&:after{
+			content: '';
+			position: absolute;
+			right: -6px;
+			top: 8px;
+			width: 3px;
+			height: 3px;
+			border-radius: 3px 3px 3px 3px;
+			background: $primary-color;
+		}
+	}
+
+	&--header{
+		background-position: 0 0;
+		padding-left: 39px;
+		@include align-items(center);
+	    @include flexbox();
+	}
+}
+
+.site-header{
+	&--front{
+		padding: 80px 0 40px 0;
+	}
+}
+
+.site-header-projects{
+	background: transparent !important;
+}
+
+.site-header-projects #logo{
+	opacity: 0.3;
+	font-size: 44px;
+	padding: 7px 20px;
+	-webkit-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+.site-header-projects:hover #logo,
+.site-header-projects:focus #logo,
+.site-header-projects:active #logo{
+	opacity: 1;
+}
