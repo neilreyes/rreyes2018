@@ -16,6 +16,10 @@
 	align-content: stretch;
 	@include flex-wrap(wrap);
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> develop
 	> div,
 	> nav{
 		width: 100%;
@@ -66,6 +70,7 @@
 	color: #717982;
 }
 
+<<<<<<< HEAD
 #colophon {
 	background: #1E2329;
 	border-top: 1px solid rgba(255,255,255,0.1);
@@ -81,6 +86,23 @@
 
 .copyright a{
 	color: #ffffff;
+=======
+.site-footer {
+	background: #1E2329;
+	border-top: 1px solid rgba(255,255,255,0.1);
+
+	.copyright {
+		color: #6C7177;
+		font-size: 12px;
+		margin: 0;
+		text-transform: normal;
+		padding: 3px 0;
+	}
+
+	a{
+		color: #ffffff;
+	}
+>>>>>>> develop
 }
 
 .site-info{

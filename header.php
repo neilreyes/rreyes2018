@@ -26,7 +26,11 @@ genesis_markup( array(
 do_action( 'genesis_before' );
 
 genesis_markup( array(
+<<<<<<< HEAD
 	'open'   => '<div %s>',
+=======
+	'open'   => '<div id="panel" %s>',
+>>>>>>> develop
 	'context' => 'site-container',
 ) );
 

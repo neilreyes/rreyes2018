@@ -20,7 +20,11 @@ function roboto_load_framework(){
 	// require_once( ROBOTO_FUNCTIONS_DIR . 'widgetize.php' );
 
 	// Load structures
+<<<<<<< HEAD
 	// require_once( ROBOTO_STRUCTURES_DIR . 'footer.php');
+=======
+	require_once( ROBOTO_STRUCTURES_DIR . 'footer.php');
+>>>>>>> develop
 	require_once( ROBOTO_STRUCTURES_DIR . 'front-page.php');
 	require_once( ROBOTO_STRUCTURES_DIR . 'header.php');
 	require_once( ROBOTO_STRUCTURES_DIR . 'layout.php');
