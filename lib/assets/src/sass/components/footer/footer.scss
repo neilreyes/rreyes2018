@@ -16,6 +16,7 @@
 	align-content: stretch;
 	@include flex-wrap(wrap);
 	
+	
 	> div,
 	> nav{
 		width: 100%;
@@ -66,21 +67,21 @@
 	color: #717982;
 }
 
-#colophon {
+.site-footer {
 	background: #1E2329;
 	border-top: 1px solid rgba(255,255,255,0.1);
-}
 
-#colophon .copyright {
-    color: #6C7177;
-	font-size: 12px;
-	margin: 0;
-	text-transform: normal;
-	padding: 3px 0;
-}
+	.copyright {
+		color: #6C7177;
+		font-size: 12px;
+		margin: 0;
+		text-transform: normal;
+		padding: 3px 0;
+	}
 
-.copyright a{
-	color: #ffffff;
+	a{
+		color: #ffffff;
+	}
 }
 
 .site-info{
