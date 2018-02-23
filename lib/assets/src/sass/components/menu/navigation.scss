@@ -1,0 +1,140 @@
+#mobile-menu-wrapper{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100%;
+	background: #fbfbfb;
+	z-index: 2;
+	@include transform(translateX(100vw));
+	@include transition(all 100ms ease-in-out);
+}
+
+#site-navigation{
+	@include flexbox();
+	@include justify-content(flex-end);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+}
+
+.primary-navigation-container{
+	width: 100%;
+}
+
+.main-navigation {
+	@include flexbox();
+	@include justify-content(flex-end);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+    height: 100%;
+
+	ul {
+		
+		/* 2nd tier */
+		ul {
+			box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+			float: left;
+			position: absolute;
+			top: 1.5em;
+			left: -999em;
+			z-index: 99999;
+
+			a {
+				width: 200px;
+			}
+
+			/* 3nd tier */
+			ul {
+				left: -999em;
+				top: 0;
+			}
+		}
+	}
+
+	li {
+		position: relative;
+	}
+
+	a {
+		color: #818181;
+		font-size: 13px;
+		font-family: 'Montserrat', Arial, sans-serif;
+		display: block;
+		text-decoration: none;
+		text-transform: uppercase;
+		padding: 7px 10px;
+	}
+
+	&--header{
+		@media screen and (max-width:768px){
+			display: none;
+		}
+
+		@media screen and (min-width:768px){
+			@include flexbox();
+		}
+
+		width: 100%;
+
+		.current-menu-item{
+			a{
+				color: $primary-color;
+			}
+		}
+	}
+
+	&--mobile{
+		@include flex-wrap(wrap);
+		.menu-item{
+			width: 100%;
+			text-align: center;
+
+			a{
+				font-size: 20px;
+				padding: 30px;
+				border-bottom: solid 1px rgba(0,0,0,0.1);
+			}
+			
+			&:first-child{
+				border-top: solid 1px rgba(0,0,0,0.1);
+			}
+		}
+	}
+	
+	/* Footer Navigation */
+	&--footer{
+		.current-menu-item{
+			a{
+				color: #ffffff;
+			}
+		}
+	}
+}
+
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	float: left;
+	width: 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+

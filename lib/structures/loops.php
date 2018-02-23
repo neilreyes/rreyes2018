@@ -28,7 +28,23 @@ function roboto_do_loop(){
 
 	} elseif ( is_front_page() ) {
 
-		echo get_template_part( '/lib/template-parts/front-page/sections' );
+		global $wp_query, $more;
+
+		$args = array(
+			'post_type' => 'projects',
+			'post_status' => 'publish',
+			'posts_per_page' => -1,
+		);
+
+		$wp_query = new WP_Query( $args );
+
+		// Only set $more to 0 if we're on an archive.
+		$more = is_singular() ? $more : 0;
+
+		roboto_front_featured_project_loop();
+
+		// Restore original query.
+		wp_reset_query();
 
 	} elseif ( is_404() ) {
 		
@@ -42,4 +58,46 @@ function roboto_do_loop(){
 
 add_action('genesis_loop', 'roboto_do_loop');
 
-?>
+function roboto_front_featured_project_loop() {
+
+	// Use old loop hook structure if not supporting HTML5.
+	if ( ! genesis_html5() ) {
+		genesis_legacy_loop();
+		return;
+	}
+
+	if ( have_posts() ) :
+
+		do_action( 'genesis_before_while' );
+		while ( have_posts() ) : the_post();
+
+			do_action( 'genesis_before_entry' );
+
+			printf( '<article %s>', genesis_attr( 'entry' ) );
+
+				do_action( 'genesis_before_entry_content' );
+
+				printf( '<div %s>', genesis_attr( 'class', array('class'=>'entry-content project-content') ) );
+
+					//do_action( 'roboto_featured_project_entry_header' );
+
+					do_action( 'roboto_featured_project_entry_content' );
+
+					//do_action( 'roboto_featured_project_entry_footer' );
+				
+				echo '</div>';
+
+				do_action( 'genesis_after_entry_content' );
+
+			echo '</article>';
+
+			do_action( 'genesis_after_entry' );
+
+		endwhile; // End of one post.
+		do_action( 'genesis_after_endwhile' );
+
+	else : // If no posts exist.
+		do_action( 'genesis_loop_else' );
+	endif; // End loop.
+
+}

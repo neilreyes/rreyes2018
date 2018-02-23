@@ -1,0 +1,114 @@
+/* Footer */
+#footer-primary-navigation{
+	display: none;
+
+	@media screen and (min-width: 768px) {
+		display: block;
+	}
+}
+
+.site-footer-container{
+	padding: 10px;
+	@extend .grid-flex;
+	@include flexbox();
+	@include align-items(center);
+	justify-content: space-between;
+	align-content: stretch;
+	@include flex-wrap(wrap);
+	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> develop
+	> div,
+	> nav{
+		width: 100%;
+		text-align: center;
+
+		@media screen and (min-width: 768px){
+			width: 33.33%;
+			text-align: initial;
+		}
+	}
+
+	@media screen and (min-width: 768px){
+		padding: 0px;
+		@include flex-wrap(no-wrap);
+	}
+	
+}
+
+.site-branding--footer{
+	@include flexbox();
+	@include justify-content(center);
+	text-indent: -88888px;
+}
+
+.logo--footer{
+	width: 32px;
+	display: block;
+	padding: 0;
+	background-position: center center;
+
+	@media screen and (min-width: 768px){
+		padding: 30px;
+	}
+}
+
+#lower{
+	background: #1E2329;
+	z-index: 1;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+}
+
+#lower label{
+	text-transform: uppercase;
+	font-family: 'Montserrat', sans-serif;
+	color: #717982;
+}
+
+<<<<<<< HEAD
+#colophon {
+	background: #1E2329;
+	border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+#colophon .copyright {
+    color: #6C7177;
+	font-size: 12px;
+	margin: 0;
+	text-transform: normal;
+	padding: 3px 0;
+}
+
+.copyright a{
+	color: #ffffff;
+=======
+.site-footer {
+	background: #1E2329;
+	border-top: 1px solid rgba(255,255,255,0.1);
+
+	.copyright {
+		color: #6C7177;
+		font-size: 12px;
+		margin: 0;
+		text-transform: normal;
+		padding: 3px 0;
+	}
+
+	a{
+		color: #ffffff;
+	}
+>>>>>>> develop
+}
+
+.site-info{
+	@include order(2);
+
+	@media screen and (min-width: 768px){
+		@include order(-1);
+	}
+}
