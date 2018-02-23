@@ -1,4 +1,6 @@
 @import 'vendors/bootstrap';
+@import 'vendors/owl-carousel';
+@import 'vendors/owl-carousel-transition';
 @import 'helpers/mixins';
 @import 'helpers/variables';
 
@@ -10,6 +12,7 @@
 @import 'components/forms/inputs';
 @import 'components/header/header';
 @import 'components/menu/navigation';
+@import 'components/pages/about';
 @import 'components/panels/panels';
 /*! 
 @import 'components/modules/services';
