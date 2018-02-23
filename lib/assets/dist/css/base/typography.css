@@ -87,3 +87,29 @@ ins {
 big {
   font-size: 125%;
 }
+
+/* line 80, ../../../src/sass/base/typography.scss */
+blockquote {
+  padding: 0;
+  margin: 0;
+  position: relative;
+  border: 0px none;
+}
+/* line 86, ../../../src/sass/base/typography.scss */
+blockquote .message {
+  position: relative;
+  border: 0px none;
+  margin: 0;
+  padding: 0;
+}
+/* line 92, ../../../src/sass/base/typography.scss */
+blockquote .message:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0px;
+  width: 42px;
+  height: 36px;
+  background: url(images/sprite.png) no-repeat scroll 0 0 transparent;
+  z-index: 1;
+}

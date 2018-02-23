@@ -73,7 +73,7 @@ function roboto_front_featured_project_loop() {
 
 			do_action( 'genesis_before_entry' );
 
-			printf( '<article %s>', genesis_attr( 'entry' ) );
+			printf( '<article %s>', genesis_attr( 'project-entry' ) );
 
 				do_action( 'genesis_before_entry_content' );
 

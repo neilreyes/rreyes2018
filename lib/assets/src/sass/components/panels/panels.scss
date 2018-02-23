@@ -16,6 +16,11 @@
 	font-size: 22px;
 }
 
+.hero-container{
+	@extend .container !optional;
+	@extend .text-center !optional;
+}
+
 /* Projects */
 .projects-container{
 	padding: 0px;
@@ -43,10 +48,14 @@
 
 	&-entry{
 		border-radius: 3px;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
 		width: 100%;
-		transform: translateY(30px);
-		opacity: 0;
+		/* -webkit-transform: translateY(30px);*/
+		/*         transform: translateY(30px);*/
+		opacity: 1;
+		-webkit-transition: all 1s ease-in-out;
 		transition: all 1s ease-in-out;
 		margin: 0px;
 
@@ -55,20 +64,26 @@
 		}
 	
 		&.is-showing{
-			transform: translateY(0px);
+			-webkit-transform: translateY(0px);
+			        transform: translateY(0px);
 			opacity: 1;
 		}
 	}
 
 	&-container{
-		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
 		box-radius: 3px;
-		box-shadow: 0 18px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
+		-webkit-box-shadow: 0 18px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
+		        box-shadow: 0 18px 35px rgba(50,50,93,.1),0 8px 15px rgba(0,0,0,.07);
+		-webkit-transition: all .5s;
 		transition: all .5s;
 
 		&:hover{
-			transform: translateY(-5px);
-			box-shadow: 0 18px 35px rgba(50,50,93,.3),0 8px 15px rgba(0,0,0,.3);
+			-webkit-transform: translateY(-5px);
+			        transform: translateY(-5px);
+			-webkit-box-shadow: 0 18px 35px rgba(50,50,93,.3),0 8px 15px rgba(0,0,0,.3);
+			        box-shadow: 0 18px 35px rgba(50,50,93,.3),0 8px 15px rgba(0,0,0,.3);
 		}
 	}
 
@@ -94,8 +109,11 @@
 		margin: 0;
 		padding: 0;
 		list-style: none;
+		display: -webkit-box;
+		display: -ms-flexbox;
 		display: flex;
-		flex-wrap: wrap;
+		-ms-flex-wrap: wrap;
+		    flex-wrap: wrap;
 	}
 
 	&-title{
@@ -127,10 +145,6 @@
 	}
 }
 
-#contact .lead{
-	color: #fff;
-}
-
 #projects{
 	padding: 50px 0px 0px 0px;
 
@@ -139,45 +153,51 @@
 	}
 }
 
+#contact .lead{
+	color: #fff;
+}
+
 /* Home Testimonial */
 #landing-testimonial{
 	background: #f2f7fa;
-}
 
-#landing-testimonial .title{
-	text-transform: uppercase;
-	font-size: 35px;
-	margin: 0px 0px 35px 0;
-}
+	.title{
+		text-transform: uppercase;
+		font-size: 35px;
+		margin: 0px 0px 35px 0;
+	}
 
-#landing-testimonial blockquote .message{
-	font-size: 29px;
-    color: #072F3E;
-	padding: 0 0 0 56px;
-}
+	blockquote .message{
+		font-size: 29px;
+	    color: #072F3E;
+		padding: 0 0 0 56px;
+	}
 
-#landing-testimonial .profile-entry{
-	padding: 15px 0;
-}
+	.profile-entry{
+		padding: 15px 0;
 
-#landing-testimonial .profile-entry span{
-	font-size: 14px;
-	line-height: 16px;
-}
+		span{
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+} 
 
-.profile-entry span{
-	display: block;
-}
+.profile-entry{
+	span{
+		display: block;
+	}
 
-.profile-entry .name{
-	font-weight: bold;
-}
+	.name{
+		font-weight: bold;
+	}
 
-.profile-entry .company{
-	text-transform: uppercase;
-	font-size: 10px;
-	color: #D8262C;
-	font-family: 'Montserrat', Arial, sans-serif;
+	.company{
+		text-transform: uppercase;
+		font-size: 10px;
+		color: #D8262C;
+		font-family: 'Montserrat', Arial, sans-serif;
+	}
 }
 
 .profile-thumb{
@@ -191,10 +211,11 @@
 
 .profile-container{
 	margin: 20px 0;
-	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
+	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
 }
 
@@ -214,509 +235,199 @@
 	padding: 0;
 	margin: 0;
 
+	li{
+		padding: 35px 20px;
+		border-bottom: 2px solid #eaeaea;
+		-webkit-transition: all .3s;
+		transition: all .3s;
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+
+		&.on{
+			border-bottom: 2px solid transparent;
+			border-radius: 5px;
+			-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+			        box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
+
+			blockquote{
+				&:before{
+					background: #c0c0c0;
+					-webkit-transform: rotate(45deg);
+					transform: rotate(45deg);
+				}
+
+				&:after{
+					background: #c0c0c0;
+					-webkit-transform: rotate(-45deg);
+					transform: rotate(-45deg);
+				}
+			}
+		}
+
+		blockquote{
+			&:before{
+				-webkit-transform: rotate(90deg);
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	&:hover,
+	&:focus,
+	&:active{
+		border-bottom: 2px solid #D8262C;
+	}
+
+	blockquote{
+		position: relative;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		cursor: pointer;
+		max-height: 50px;
+		overflow: hidden;
+		-webkit-transition: all 1s;
+		transition: all 1s;
+
+		&:after{
+			top: 9px;
+		}
+
+		&:after,
+		&:before{
+			background: #D8262C;
+			width: 20px;
+			height: 3px;
+			position: absolute;
+			content: '';
+			z-index: 3;
+			right: 0px;
+			top: 9px;
+
+			-webkit-transition: all .3s;
+			transition: all .3s;
+		}
+
+		.profile-container{
+			width: 30%;
+			display: -moz-flex;
+			display: -ms-flex;
+			display: -o-flex;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+
+			padding: 0;
+			margin: 0;
+			-moz-order: -1;
+			-ms-order: -1;
+			-o-order: -1;
+			-webkit-box-ordinal-group: 0;
+			    -ms-flex-order: -1;
+			        order: -1;
+		}
+	}
+
+	.on{
+		blockquote{
+			max-height: 1000px;
+		}
+
+		.message{
+			&:before{
+				display: none;
+			}
+		}
+	}
+
+	.message{
+		color: #072F3E;
+		position: relative;
+		width: 60%;
+		padding: 0 0 0 60px;
+		line-height: 29px;
+
+		&:before{
+			cursor: pointer;
+			width: 100%;
+			content: '';
+			height: 50px;
+			position: absolute;
+			left: 0px;
+			right: 0px;
+			bottom: 0px;
+			/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */ /* FF3.6-15 */ /* Chrome10-25,Safari5.1-6 */
+			background: -webkit-gradient(linear,  left top, left bottom,  from(rgba(255,255,255,0)),to(rgba(255,255,255,1)));
+			background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+		}
+	}
+
+	.profile-thumb{
+		width: 50px;
+		height: 50px;
+	}
+
+	.name{
+		font-family: 'Montserrat', Arial, sans-serif;
+		font-size: 15px;
+	}
+
+}
+
+#projects{
+	.container{
+		display: -webkit-box;
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-wrap: wrap;
+		-o-flex-wrap: wrap;
+		flex-wrap: wrap;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.projects-container{
+		padding: 0 20px;
+	}
+
+	.project-entry {
+		padding: 10px;
+		width: 50%;
+	}
+
+	.project-content{
+		width: 100%;
+	}
+}
+
+@media screen and (min-width: 992px) {
+	.project-entry {
+		width: 33.33%;
+	}
+}
+
+@media screen and (min-width: 1170px) {
+	.project-content{
+		width: 50%;
+	}
+
+	.project-entry {
+		width: 50%;
+	}
+
+	.project-img{
+		height: 100%;
+		width: 50%;
+	}
+
+	.project-link{
+		@include flexbox();
+	}
 }
 
-.testi-dropdown li{
-	padding: 35px 20px;
-	border-bottom: 2px solid #eaeaea;
-	-webkit-transition: all .3s;
-	-o-transition: all .3s;
-	transition: all .3s;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.testi-dropdown li:hover,
-.testi-dropdown li:focus,
-.testi-dropdown li:active{
-	border-bottom: 2px solid #D8262C;
-}
-
-.testi-dropdown li.on{
-	border-bottom: 2px solid transparent;
-	border-radius: 5px;
-	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.2);
-}
-
-.testi-dropdown blockquote{
-	cursor: pointer;
-	max-height: 50px;
-	overflow: hidden;
-	-webkit-transition: all 1s;
-	-o-transition: all 1s;
-	transition: all 1s;
-}
-
-.testi-dropdown .on blockquote{
-	max-height: 1000px;
-}
-
-/* Testimonial Dropdown */
-.testi-dropdown blockquote{
-	position: relative;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-}
-
-.testi-dropdown blockquote:after,
-.testi-dropdown blockquote:before{
-	background: #D8262C;
-	width: 20px;
-	height: 3px;
-	position: absolute;
-	content: '';
-	z-index: 3;
-	right: 0px;
-	top: 9px;
-
-	-webkit-transition: all .3s;
-	-o-transition: all .3s;
-	transition: all .3s;
-}
-
-.testi-dropdown li blockquote:before{
-	-webkit-transform: rotate(90deg);
-	-ms-transform: rotate(90deg);
-	-o-transform: rotate(90deg);
-	transform: rotate(90deg);
-}
-
-.testi-dropdown li.on blockquote:before{
-	background: #c0c0c0;
-	-webkit-transform: rotate(45deg);
-	-ms-transform: rotate(45deg);
-	-o-transform: rotate(45deg);
-	transform: rotate(45deg);
-}
-
-.testi-dropdown li.on blockquote:after{
-	background: #c0c0c0;
-	-webkit-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-
-.testi-dropdown blockquote:after{
-	top: 9px;
-}
-
-.testi-dropdown blockquote .profile-container{
-	width: 30%;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-
-	padding: 0;
-	margin: 0;
-
-	-webkit-order: -1;
-	-moz-order: -1;
-	-ms-order: -1;
-	-o-order: -1;
-	order: -1;
-}
-
-.testi-dropdown .message{
-	color: #072F3E;
-	position: relative;
-	width: 60%;
-	padding: 0 0 0 60px;
-	line-height: 29px;
-}
-
-.testi-dropdown .message:before{
-	cursor: pointer;
-	width: 100%;
-	content: '';
-	height: 50px;
-	position: absolute;
-	left: 0px;
-	right: 0px;
-	bottom: 0px;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,ffffff+100&0+0,1+100 */
-	background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-}
-
-.testi-dropdown .on .message:before{
-	display: none;
-}
-
-.testi-dropdown .profile-thumb{
-	width: 50px;
-	height: 50px;
-}
-
-.testi-dropdown .name{
-	font-family: 'Montserrat', Arial, sans-serif;
-	font-size: 15px;
-}
-
-/* Misc Items */
-blockquote{
-	padding: 0;
-	margin: 0;
-	position: relative;
-	border: 0px none;
-}
-
-blockquote .message{
-	position: relative;
-	border: 0px none;
-	margin: 0;
-	padding: 0;
-}
-
-blockquote .message:after{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0px;
-	width: 42px;
-	height: 36px;
-	background: url(images/sprite.png) no-repeat scroll 0 0 transparent;
-	z-index: 1;
-}
-
-/* Home Projects */
-#projects .container{
-	display: flex;
-	-webkit-flex-wrap: wrap;
-	-moz-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	-o-flex-wrap: wrap;
-	flex-wrap: wrap;
-}
-
-/* .project-caption{
-	padding: 0;
-	position: relative;
-	z-index: 2;
-	padding: 15px;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-.project{
-	position: relative;
-	padding: 0px;
-	cursor: pointer;
-}
-
-.project > a{
-	color: #fff;
-}
-
-.project > a:hover,
-.project > a:focus,
-.project > a:active{
-	text-decoration: none;
-}
-
-.project:after{
-	display: none;
-	content: '';
-	width: 100%;
-	height: 100%;
-	background: rgba(0,0,0,0);
-	position: absolute;
-	z-index: 2;
-	left: 0px;
-	top: 0px;
-
-	-webkit-transition: all .3s;
-	-o-transition: all .3s;
-	transition: all .3s;
-}
-
-.project:hover:after{
-	background: rgba(0,0,0,0.5);
-}
-
-.project:hover .project-thumb{
-	-webkit-transition: all .3s;
-	-o-transition: all .3s;
-	transition: all .3s;
-}
-
-.project:hover .project-thumb{
-	-webkit-transform: scale(1.05);
-	-ms-transform: scale(1.05);
-	-o-transform: scale(1.05);
-	transform: scale(1.05);
-}
-
-.project-featured:hover .project-thumb{
-	-webkit-transform: scale(1);
-	-ms-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
-}
-
-.project-featured:after{
-	display: none;
-}
-
-.project .wrapper{
-	width: 100%;
-	position: relative;
-	overflow: hidden;
-}
-
-.project:hover .project-title{
-	opacity: 1;
-	-webkit-transform: scale(1);
-	-ms-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
-}
-
-.project-title{
-	position: absolute;
-	padding: 32% 0;
-	opacity: 0;
-	font-size: 24px;
-	text-transform: uppercase;
-	color: #fff;
-	margin: 0;
-	text-align: center;
-	z-index: 3;
-	width: 100%;
-	-webkit-transform: scale(1.3);
-	-ms-transform: scale(1.3);
-	-o-transform: scale(1.3);
-	transform: scale(1.3);
-	-webkit-transition: all .3s;
-	-o-transition: all .3s;
-	transition: all .3s;
-}
-
-.project-featured .project-title,
-.project-featured:hover .project-title,
-.project-featured:active .project-title,
-.project-featured:focus .project-title,
-.project-featured:active:hover .project-title,
-.project-featured:active:focus .project-title{
-	opacity: 1;
-	margin: 20px 0 10px 0;
-	padding: 0% 0;
-	text-align: left;
-	display: block;
-	position: relative !important;
-	-webkit-transform: scale(1);
-	-ms-transform: scale(1);
-	-o-transform: scale(1);
-	transform: scale(1);
-}
-
-.project-desc{
-	font-size: 16px;
-	color: #fff;
-}
-
-.project-cats{
-	text-transform: uppercase;
-	font-size: 11px;
-	color: #fff;
-}
-
-Featured Project
-.project-featured .wrapper{
-	display: flex;
-	position: relative;
-	overflow: hidden;
-	width: 100%;
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-}
-
-Dr Sicknote
-.project-drsicknote .wrapper{
-	text-align: center;
-	background: #4FB37D;
-}
-
-Catering Industries
-.project-cateringind{
-	background: #3B393A;
-}
-
-.project-cateringind .wrapper{
-	text-align: center;
-	background: #3B393A;
-}
-
-Hoxton
-.project-hoxton .wrapper{
-	background: #28a1db;
-}
-
-.project-hoxton .project-caption{
-
-}
-
-.project-hoxton .project-thumb{
-	width: 285px;
-	height: 100%;
-}
-
-.collaborate{
-	cursor: pointer;
-}
-
-.project-nav-bar{
-	background: #2f2f2f;
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	align-content: stretch;
-}
-
-.proj-nav-next{
-	border-left: 1px solid rgba(255,255,255,0.3);
-	width: 55px;
-	box-sizing: border-box;
-}
-
-.proj-nav-next a{
-	background: url(images/icon-sprite.png) repeat scroll transparent;
-	background-position: 4px 7px;
-}
-
-.proj-nav-prev{
-	border-left: 1px solid rgba(255,255,255,0.3);
-	width: 55px;
-	box-sizing: border-box;
-}
-
-.proj-nav-prev a{
-	background: url(images/icon-sprite.png) repeat scroll transparent;
-	background-position: 51px 7px;
-}
-
-.proj-nav-prev a,
-.proj-nav-next a{
-	text-indent: -8888px;
-}
-
-.proj-nav-back{
-	flex-grow: 2;
-	width: 80%;
-}
-
-.proj-nav-btn a{
-	display: inline-block;
-	width: 100%;
-	height: 100%;
-	-webkit-transition: all .3s;
-	-o-transition: all .3s;
-	transition: all .3s;
-}
-
-.proj-nav-btn:hover a,
-.proj-nav-btn:focus a,
-.proj-nav-btn:active a{
-	background-color: rgba(0,0,0,0.8);
-}
-
-.cta{
-	background-color: #ed1b2e;
-}
- */
-/* .proj-nav-prev:before,
-.proj-nav-next:after{
-	background: url(images/icon-sprite.png) no-repeat scroll rgba(0,0,0,0.5);
-	color: #fff;
-	padding: 25px;
-	position: absolute;
-	font-weight: bold;
-	width: 49px;
-	opacity: 0.3;
-	top: 0px;
-	height: 80px;
-	z-index: 1;
-} */
-
-/* 	.proj-nav{
-	position: absolute;
-	z-index: 5;
-	top: 45vh;
-	background: rgba(0,0,0,0.5);
-	transition: all .3s;
-}
-
-.proj-nav:hover{
-	background: rgba(0,0,0,1);
-}
-
-.proj-nav-next:hover > a{
-	right: 0;
-	background: rgba(0,0,0,1);
-}
-
-.proj-nav a{
-	position: relative;
-	background: #000;
-	height: 50px;
-	width: 50px;
-	display: inline-block;
-	padding: 28px;
-	color: #fff;
-	text-decoration: none;
-	z-index: 2;
-	-webkit-transition: all .3s;
-	-o-transition: all .3s;
-	transition: all .3s;
-}
-
-.proj-nav-prev:hover a
-.proj-nav-prev:focus a,
-.proj-nav-prev:active a{
-	text-decoration: none;
-}
-
-.proj-nav-prev:hover a:after{
-	right: -888px;
-}
-
-.proj-nav-prev:before{
-	content: '';
-	left: 0;
-}
-
-.proj-nav-next:after{
-	content: '';
-	right: -6px;
-	background-position: 13px 8px;
-	border-top-left-radius: 15px;
-	border-bottom-left-radius: 15px;
-}
-
-.proj-nav-next > a{
-	right: -888px;
-}
-
-.proj-nav-next{
-	right: 0;
-}
 
-.proj-nav-prev{
-	left: 0;
-} */
 

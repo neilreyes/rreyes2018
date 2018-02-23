@@ -26,11 +26,7 @@ genesis_markup( array(
 do_action( 'genesis_before' );
 
 genesis_markup( array(
-<<<<<<< HEAD
-	'open'   => '<div %s>',
-=======
 	'open'   => '<div id="panel" %s>',
->>>>>>> develop
 	'context' => 'site-container',
 ) );
 
@@ -42,4 +38,5 @@ genesis_markup( array(
 	'open'   => '<div %s>',
 	'context' => 'site-inner',
 ) );
+
 genesis_structural_wrap( 'site-inner' );
