@@ -6,6 +6,7 @@ function roboto_remove_parent_loop(){
 add_action('init','roboto_remove_parent_loop');
 
 function roboto_do_loop(){
+	$about_template = "templates/about.php";
 
 	if ( is_page_template( 'page_blog.php' ) ) {
 
@@ -45,6 +46,10 @@ function roboto_do_loop(){
 
 		// Restore original query.
 		wp_reset_query();
+
+	} elseif ( is_page_template( $about_template ) ) {
+
+		roboto_do_about_template();
 
 	} elseif ( is_404() ) {
 		

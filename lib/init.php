@@ -20,7 +20,10 @@ function roboto_load_framework(){
 	// require_once( ROBOTO_FUNCTIONS_DIR . 'widgetize.php' );
 
 	// Load structures
+
+	require_once( ROBOTO_STRUCTURES_DIR . '/pages/about.php');
 	require_once( ROBOTO_STRUCTURES_DIR . '/pages/front-page.php');
+
 	require_once( ROBOTO_STRUCTURES_DIR . 'footer.php');
 	require_once( ROBOTO_STRUCTURES_DIR . 'header.php');
 	require_once( ROBOTO_STRUCTURES_DIR . 'layout.php');
@@ -108,6 +111,10 @@ function roboto_styles_and_scripts(){
 	$roboto_features_Script = 'roboto-features';
 
 	wp_enqueue_script( $slide_out, 'https://cdnjs.cloudflare.com/ajax/libs/slideout/1.0.1/slideout.min.js', array('jquery'), false, true );
+
+	wp_enqueue_script( 'narra-owl-carousel', 'https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js#asyncload', array('jquery'), false, true );
+
+	wp_enqueue_script( 'narra-bootstrap-core-script', get_stylesheet_directory_uri() . '/lib/assets/src/js/core.js#asyncload', array('jquery'), false, true);
 
 	//wp_enqueue_script( $navigation_script, get_stylesheet_directory_uri() . '/lib/assets/src/js/navigation.js', array('jquery'), false, true );
 
